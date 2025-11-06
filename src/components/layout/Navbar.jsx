@@ -14,7 +14,7 @@ const Navbar = () => {
     return (
         <header>
             <div className='name-site'>
-                <Link to="/">MINIMALL</Link>
+                <Link to="/">E-Market</Link>
             </div>
             <nav>
                 {NavElement.map((Element, index) => (
@@ -31,8 +31,8 @@ const Navbar = () => {
                     </>
                 ) : (
                     <>
-                        <Link to="/login">Connexion</Link>
-                        <Link to="/register">Inscription</Link>
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Sign Up</Link>
                     </>
                 )}
             </div>

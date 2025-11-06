@@ -43,7 +43,8 @@ const Register = () => {
     return (
         <div className="auth-page">
             <div className="auth-form">
-                <h1>Inscription</h1>
+                <h1>Sign Up</h1>
+                <p className="subtitle">Create your account to get started</p>
                 
                 {error && <div className="error">{error}</div>}
                 

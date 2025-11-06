@@ -32,42 +32,45 @@ const Login = () => {
     return (
         <div className="auth-page">
             <div className="auth-form">
-                <h1>Connexion</h1>
+                <h1>Login</h1>
+                <p className="subtitle">Enter your credentials to access your account</p>
                 
                 {error && <div className="error">{error}</div>}
                 
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label htmlFor="email">Email:</label>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             id="email"
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
+                            placeholder="name@example.com"
                             required
                         />
                     </div>
                     
                     <div className="form-group">
-                        <label htmlFor="password">Mot de passe:</label>
+                        <label htmlFor="password">Password</label>
                         <input
                             type="password"
                             id="password"
                             name="password"
                             value={formData.password}
                             onChange={handleChange}
+                            placeholder="••••••••"
                             required
                         />
                     </div>
                     
                     <button type="submit" disabled={loading} className="btn">
-                        {loading ? 'Connexion...' : 'Se connecter'}
+                        {loading ? 'Logging in...' : 'Login'}
                     </button>
                 </form>
                 
                 <p>
-                    Pas encore de compte? <Link to="/register">S'inscrire</Link>
+                    Don't have an account? <Link to="/register">Sign up</Link>
                 </p>
             </div>
         </div>
