@@ -1,18 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Navbar from './components/layout/Navbar.jsx';
+import RouteList from './routes/AppRoute.jsx';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-  
-
   return (
-    <>
-    test
-        
-    </>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <Navbar />
+        <main>
+          <RouteList />
+        </main>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

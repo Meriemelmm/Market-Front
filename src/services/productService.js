@@ -1,11 +1,6 @@
-import api from "./api";
-export const getProducts= async()=>{
-    try{
-      const response=await api.get('/products') ;
-      return response; 
-    }
-    catch(error){
-        console.log("Error fetching products :",error);
-    }
-    
-}
+import api from './api';
+
+export const productService = {
+  getAll: () => api.get('/products'),
+  getById: (id) => api.get(`/products/${id}`)
+};
