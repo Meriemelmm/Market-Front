@@ -20,7 +20,8 @@ const Login = () => {
         setLoading(true);
  console.log("test",formData);
         try {
-            await login( {email: formData.email,password: formData.password});
+           const data = await login( {email: formData.email,password: formData.password});
+           console.log("data",data);
             navigate('/');
         } catch (err) {
             setError(err.response?.data?.message || 'Erreur de connexion');

@@ -24,9 +24,9 @@ const Navbar = () => {
                 ))}
             </nav>
             <div className='auth-section'>
-                {user ? (
+                {/* {user ? (
                     <>
-                        <span>Bonjour, {user.name}</span>
+                        <span> {user.fullname}</span>
                         <button onClick={logout}>Déconnexion</button>
                     </>
                 ) : (
@@ -34,7 +34,10 @@ const Navbar = () => {
                         <Link to="/login">Login</Link>
                         <Link to="/register">Sign Up</Link>
                     </>
-                )}
+                )} */}
+                
+                        <Link to="/login">Login</Link>
+                        <Link to="/register">Sign Up</Link>
             </div>
         </header>
     );

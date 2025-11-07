@@ -11,7 +11,7 @@ header {
 }
 
 .name-site a {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #9BB4C0;
   display: flex;
@@ -19,10 +19,7 @@ header {
   gap: 0.5rem;
 }
 
-.name-site a::before {
-  content: "📦";
-  font-size: 1.2rem;
-}
+
 
 nav {
   display: flex;
