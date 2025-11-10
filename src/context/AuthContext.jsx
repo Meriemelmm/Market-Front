@@ -26,7 +26,7 @@ export const AuthProvider = ({ children }) => {
     const userData = res.data.user;
 
       if (jwt) {
-        localStorage.setItem("token", res.jwt);
+        localStorage.setItem("token", jwt);
         setToken(res.jwt);
       }
 
@@ -41,9 +41,24 @@ export const AuthProvider = ({ children }) => {
       throw error;
     }
   };
+  const logout = async () => {
+    try {
+   
+      await authService.logout();
+    } catch (error) {
+      console.error("Erreur logout backend :", error);
+    } finally {
+    
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      delete axios.defaults.headers.common['Authorization'];
+      setUser(null);
+      setToken(null);
+    }
+  };
 
   return (
-    <AuthContext.Provider value={{ user, token, register, login }}>
+    <AuthContext.Provider value={{ user, token, register, login,logout }}>
       {children}
     </AuthContext.Provider>
   );
